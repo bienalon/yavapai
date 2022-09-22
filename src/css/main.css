@@ -1,0 +1,99 @@
+html {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+body {
+  min-height: 100%;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+
+#root {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-grow: 1;
+  flex-direction: column;
+}
+
+.viewDiv {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  letter-spacing: 0em;
+  font-family: "Avenir Next", "Helvetica Neue", sans-serif;
+  line-height: 1.55rem;
+  font-feature-settings: "liga" 1, "calt" 0;
+}
+
+.esri-view-root {
+  width: 100%;
+  height: 100%;
+}
+
+/* Show hidden popups */
+.esri-popover {
+  z-index: 2000 !important;
+}
+
+.esri-layer-list-panel {
+  margin: 0 15px !important;
+}
+
+.bottom-center {
+  bottom: 0;
+  margin-bottom: 64px;
+  left: calc(50% - 176px);
+  /* width: 100%; */
+}
+
+/* Fix for some mui styles */
+/* .MuiDrawer-paperAnchorBottom {
+  height: 100% !important;
+  max-height: 50% !important;
+} */
+.MuiAvatar-root { 
+  height: 100% !important;
+}
+.MuiTab-root {
+  min-width: 50px !important;
+}
+.MuiTypography-root .MuiFormControlLabel-label .MuiTypography-body1 {
+  font-size: 1em !important;
+}
+.MuiOutlinedInput-input {
+  padding: 5px !important;
+}
+
+.MuiToggleButton-root.Mui-selected {
+  background-color: rgba(0, 140, 0, 0.5) !important;
+}
+
+#addFeatureDiv .esri-widget {
+  background-color: transparent;
+}
+
+.MuiOutlinedInput-root {
+  background-color: #fff !important;
+  border-radius: 0 !important;
+}
+
+.MuiTypography-body1 {
+  font-size: 1em !important;
+  font-style: "Avenir Next","Helvetica Neue",Helvetica,Arial,sans-serif !important;
+  color: #6e6e6e !important;
+}
+
+.esri-grid {
+  height: calc(100% - 40px) !important;
+}
+
+.filter-modeled-color {
+  background-color: "greenyellow";
+}

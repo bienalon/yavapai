@@ -1,0 +1,12 @@
+{
+    "realm": "rickcloud",
+    "auth-server-url": "https://sso.rickengineering.com/auth",
+    "ssl-required": "none",
+    "resource": "ypit",
+    "verify-token-audience": true,
+    "credentials": {
+        "secret": "8d379cb2-f977-442d-8e7f-13f44672601d"
+    },
+    "confidential-port": 0,
+    "policy-enforcer": {}
+}

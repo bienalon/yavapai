@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Web site created using create-react-app" />
+    <link rel="manifest" href="./manifest.json">
+    <link rel='preconnect dns-prefetch' href='//cdn.arcgis.com' crossorigin/>
+    <link rel='preconnect dns-prefetch' href='//services.arcgisonline.com' crossorigin/>
+    <link rel='preconnect dns-prefetch' href='//utility.arcgisonline.com' crossorigin/>
+    <link rel='preconnect dns-prefetch' href='//portal2.rickengineering.com' crossorigin/>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <link rel="stylesheet" href="https://js.arcgis.com/4.19/esri/css/main.css">
+    <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.css[0] %>">
+    <% if (htmlWebpackPlugin.options.mode === 'production') { %>
+        <!-- <script>
+          // Check that service workers are registered
+          if ("serviceWorker" in navigator) {
+            // Use the window load event to keep the page load performant
+            window.addEventListener("load", function() {
+              navigator.serviceWorker.register("./service-worker.js")
+                .catch(function() {
+                  console.log("Service Worker not loaded");
+                });
+            });
+          }
+        </script> -->
+        <% } %>
+    <!-- Load our AMD app -->
+    <script>
+        var locationPath = location.pathname.replace(/\/[^\/]+$/, "");
+        var jsBundles = '<%= htmlWebpackPlugin.files.js %>'; // Creates comma separated string with bundles
+        var jsDeps = jsBundles.split(','); // Make bundle list for deps
+        window.dojoConfig = {
+            packages: [
+                {
+                    name: "main",
+                    location: locationPath + "."
+                }
+            ],
+            deps: jsDeps // Critical
+        };
+    </script>
+    <!-- Load Esri lib -->
+    <script src="https://js.arcgis.com/4.19/"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+</body>
+
+</html>
